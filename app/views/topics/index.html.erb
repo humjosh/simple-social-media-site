@@ -1,1 +1,10 @@
 <h1>Topics</h1>
+
+<table>
+    <% @topics.each do |topic| %>
+        <tr>
+            <td><%= topic.score %></td>
+            <td><%= topic.content %></td>
+        </tr>
+    <% end %>
+</table>

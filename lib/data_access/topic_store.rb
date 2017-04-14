@@ -1,4 +1,7 @@
 class TopicStore
+    def self.get_store
+        @@store_instance ||= TopicStore.new
+    end
 
     def initialize
         @all_topics = Hash.new

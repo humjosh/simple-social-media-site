@@ -1,13 +1,18 @@
 class TopicStore
+    @instance_count
+
     def self.get_store
         @@store_instance ||= TopicStore.new
     end
 
     def initialize
         @all_topics = Hash.new
+        @instance_count = 0
     end
     
     def add(topic)
+        @instance_count += 1
+        topic.id = @instance_count
         @all_topics[topic.id] = topic
     end
 

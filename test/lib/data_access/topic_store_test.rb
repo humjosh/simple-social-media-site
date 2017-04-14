@@ -3,6 +3,19 @@ class TopicStoreTest < ActiveSupport::TestCase
     setup do
         @store = TopicStore.new
     end
+
+    test "topic IDs are auto-incrementing" do
+        # arrange
+        topic_1 = Topic.new('content')
+        topic_2 = Topic.new('more content')
+
+        # act
+        @store.add(topic_1)
+        @store.add(topic_2)
+
+        # assert
+        assert_equal topic_1.id + 1, topic_2.id
+    end
     
     test "get top 20 returns all topics if there are fewer than 20" do
         # arrange

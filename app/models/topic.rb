@@ -1,13 +1,9 @@
 class Topic
-    @@instance_count = 0
-
-    attr_reader :id
+    attr_accessor :id
     attr_reader :score
     attr_accessor :content
 
-    def initialize(content, score = 0)
-        @@instance_count += 1
-        @id = @@instance_count
+    def initialize(content = '', score = 0)
         @content = content
         @score = score
     end
@@ -18,9 +14,5 @@ class Topic
     
     def decrease_score
         @score -= 1
-    end
-
-    def <=> (other)
-        self.score <=> other.score
     end
 end

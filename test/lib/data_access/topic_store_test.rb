@@ -56,9 +56,9 @@ class TopicStoreTest < ActiveSupport::TestCase
         assert_same(topic_2, result)
     end
 
-    test "decrease topic score then update removes it from the top 20" do
+    test "decrease topic score removes it from the top 20" do
         # arrange
-        20.times do { @store.add(Topic.new('content', 1)) }
+        20.times { @store.add(Topic.new('content', 1)) }
 
         topic = Topic.new('content', 2)
         @store.add(topic)
@@ -67,15 +67,15 @@ class TopicStoreTest < ActiveSupport::TestCase
         assert_includes(@store.get_top_20, topic)
 
         # act
-        2.times do { topic.decrease_score() }
+        2.times { topic.decrease_score() }
         
         # assert
         assert_not_includes(@store.get_top_20, topic)
     end
 
-    test "increase topic score then update moves it into the top 20" do
+    test "increase topic score moves it into the top 20" do
         # arrange
-        20.times do { @store.add(Topic.new('content', 1)) }
+        20.times { @store.add(Topic.new('content', 1)) }
 
         topic = Topic.new('content', 0)
         @store.add(topic)
@@ -84,7 +84,7 @@ class TopicStoreTest < ActiveSupport::TestCase
         assert_not_includes(@store.get_top_20, topic)
 
         # act
-        2.times do { topic.increase_score() }
+        2.times { topic.increase_score() }
         
         # assert
         assert_includes(@store.get_top_20, topic)

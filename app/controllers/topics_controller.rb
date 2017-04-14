@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
     end
 
     def show
-        @topic = TopicStore.get_store().get(params[:id])
+        @topic = TopicStore.get_store().get(params[:id].to_i)
     end
 
     def new
@@ -13,6 +13,18 @@ class TopicsController < ApplicationController
     def create
         topic = Topic.new(topics_params['content'])
         TopicStore.get_store().add(topic)
+        redirect_to :action => :index
+    end
+
+    def upvote
+        topic = TopicStore.get_store().get(params[:id].to_i)
+        topic.increase_score()
+        redirect_to :action => :index
+    end
+
+    def downvote
+        topic = TopicStore.get_store().get(params[:id].to_i)
+        topic.decrease_score()
         redirect_to :action => :index
     end
 

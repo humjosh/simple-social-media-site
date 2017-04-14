@@ -1,3 +1,32 @@
 // Place all the styles related to the Topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.topics-table {
+    width: 100%;
+
+    tr {
+        vertical-align: top;
+    }
+
+    td {
+        padding: 20px;
+    }
+}
+
+.score-container {
+    text-align: center;
+    width: 100px;
+
+    a {
+        color: black;
+        text-decoration: none;
+        
+        &:hover {
+            color: red;
+        }
+    }
+
+    .glyphicon, .score {
+        display: block;
+    }
+}

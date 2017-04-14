@@ -1,5 +1,9 @@
-<%= form_for :topic do |f| %>
-    <h3>New Topic</h3>
-    <%= f.text_field :content %>
-    <%= f.submit %>
-<% end %>
+<div class="panel panel-default">
+    <div class="panel-heading">New Topic</div>
+    <div class="panel-body">
+        <%= form_for(:topic, :url => topics_path, :method => :post) do |f| %>
+            <%= f.text_field :content %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+</div>

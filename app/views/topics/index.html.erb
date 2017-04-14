@@ -1,10 +1,13 @@
-<h1>Topics</h1>
-
-<table>
-    <% @topics.each do |topic| %>
-        <tr>
-            <td><%= topic.score %></td>
-            <td><%= topic.content %></td>
-        </tr>
-    <% end %>
-</table>
+<div class="panel panel-default">
+    <div class="panel-heading">Topics</div>
+    <div class="panel-body">
+        <table>
+            <% @topics.each do |topic| %>
+                <tr>
+                    <td><%= topic.score %></td>
+                    <td><%= topic.content %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

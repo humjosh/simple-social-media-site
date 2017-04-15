@@ -16,18 +16,6 @@ class TopicsController < ApplicationController
         redirect_to :action => :index
     end
 
-    def upvote
-        topic = TopicStore.get_store().get(params[:id].to_i)
-        topic.increase_score()
-        redirect_to :action => :index
-    end
-
-    def downvote
-        topic = TopicStore.get_store().get(params[:id].to_i)
-        topic.decrease_score()
-        redirect_to :action => :index
-    end
-
     private
     def topics_params
         params.require(:topic).permit(:content)

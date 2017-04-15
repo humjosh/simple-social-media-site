@@ -17,16 +17,17 @@
     text-align: center;
     width: 100px;
 
-    a {
+    .vote-button {
         color: black;
         text-decoration: none;
         
         &:hover {
             color: red;
+            cursor: pointer;
         }
     }
 
-    .glyphicon, .score {
+    .vote-button, .score {
         display: block;
     }
 }

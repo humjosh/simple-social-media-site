@@ -1,16 +1,5 @@
 <div class="panel panel-default">
     <div class="panel-body">
-        <div class="score-container">
-            <%= link_to :controller => "topics", :action => "upvote", :id => @topic.id do %>
-                <span class="glyphicon glyphicon-arrow-up .upvote" aria-hidden="true"></span>
-            <% end %>
-            <div class="score">
-                <%= @topic.score %>
-            </div>
-            <%= link_to :controller => "topics", :action => "downvote", :id => @topic.id do %>
-                <span class="glyphicon glyphicon-arrow-down .downvote" aria-hidden="true"></span>
-            <% end %>
-        </td>
         <%= @topic.content %>
     </div>
 </div>

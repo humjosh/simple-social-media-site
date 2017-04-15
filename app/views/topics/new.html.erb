@@ -2,8 +2,8 @@
     <div class="panel-heading">New Topic</div>
     <div class="panel-body">
         <%= form_for(:topic, :url => topics_path, :method => :post) do |f| %>
-            <%= f.text_field :content %>
-            <%= f.submit %>
+            <%= f.text_area :content, class: ['form-control'] %>
+            <%= f.submit class: ['form-control'] %>
         <% end %>
     </div>
 </div>

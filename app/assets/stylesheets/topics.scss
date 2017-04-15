@@ -13,6 +13,13 @@
     }
 }
 
+.topic-content {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .score-container {
     text-align: center;
     width: 100px;

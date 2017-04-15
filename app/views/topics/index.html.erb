@@ -10,10 +10,11 @@
                             <%= topic.score %>
                         </div>
                         <%= content_tag(:span, data: { id: topic.id, vote_type: 'down' }, class: ["glyphicon", "glyphicon-arrow-down", "vote-button"]) do %><% end %>
-                        
                     </td>
                     <td>
-                        <%= topic.content %>
+                        <p class="topic-content">
+                            <%= topic.content %>
+                        </p>
                         <%= link_to "Show more", topic_path(topic.id) %>                    
                     </td>
                 </tr>

@@ -4,6 +4,9 @@ This app is a simple social media site, where you can create topics and vote the
 
 It is deployed on Heroku at https://humber-social-media-demo.herokuapp.com/
 
+## Running the project locally
+From the root project directory, run `bundle install`, then `bin/rails server`. You can run the unit tests with `bin/rails test`.
+
 ## Design choices
 
 ### TopicStore
